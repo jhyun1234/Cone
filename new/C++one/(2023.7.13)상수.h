@@ -1,7 +1,8 @@
+#pragma once
 #include <stdio.h>
 // stdio 
 // 표준 입출력 헤더 파일 
-void main() 
+void main()
 {
 #pragma region 서식 지정자 
 	// 출력하기 위한 자료형의 정보를 명시적으로 지정해주는 것.
@@ -13,14 +14,14 @@ void main()
 	// 자료형 
 	// char   <-> 정수형 (1byte) -> 하나의 문자를 저장 할 수 있다.
 	// short  <-> 정수형 (2byte)
-    // int    <-> 정수형 (4byte)
+	// int    <-> 정수형 (4byte)
 	// long   <-> 정수형 (4byte) 운영체제에 따라서 8 or 4
 	// flot   <-> 실수형 (4byte)
 	// double <-> 실수형 (8byte)
 
 	char alphabet = 'A';
 
-    int data = 10;
+	int data = 10;
 
 	float decimal = 12.5f;
 
@@ -39,10 +40,10 @@ void main()
 	// \n 개행 문자
 	//printf("%c\n",alphabet);
 	//printf("%d\n", data);
-	
+
 	// 서식 지정자의 경우 하나의 표준 출력 함수에 여러 개의 서식을
 	// 넣을 수 있으며, 서식 지정자의 순서는 왼쪽에서부터 시작한다.
-	
+
 	//printf("%f %lf\n", decimal, value);
 
 	//서식 지정자는 각각의 서식에 따라 원하는 데이터를 출력할 수 있으며,
@@ -51,7 +52,7 @@ void main()
 	//ex)int data1 = 20;
 	//ex)printf("%s\n", data1);
 
-	
+
 
 #pragma endregion
 #pragma region 변수의 이름 규칙
@@ -81,7 +82,7 @@ void main()
 	//     int Apple = 2;
 #pragma endregion
 #pragma region 변수의 초기화
-	  
+
 	// 최초로 변수에 값을 저장해주는 과정
 
 	// 4byte 메모리 공간 생성
@@ -94,7 +95,7 @@ void main()
 	a1 = 999;
 
 	// printf("a1 변수의 값 : %d", a1);
-  
+
 
 
 
@@ -140,8 +141,8 @@ void main()
 	printf("%d\n", 3 / 4);
 
 
-	
-	
+
+
 
 
 

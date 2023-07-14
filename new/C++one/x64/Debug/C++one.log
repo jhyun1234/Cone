@@ -1,2 +1,6 @@
-﻿  Source.c
-  C++one.vcxproj -> C:\Users\User A\Documents\GitHub\Cone\new\C++one\x64\Debug\C++one.exe
+﻿  Source.cpp
+C:\Users\Administrator\Desktop\Cone\new\C++one\Source.cpp(5,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\Administrator\Desktop\Cone\new\C++one\Source.cpp(95,15): warning C4309: '초기화 중': 상수 값이 잘립니다.
+C:\Users\Administrator\Desktop\Cone\new\C++one\Source.cpp(105,19): warning C4305: '초기화 중': 'int'에서 'char'(으)로 잘립니다.
+C:\Users\Administrator\Desktop\Cone\new\C++one\Source.cpp(105,16): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  C++one.vcxproj -> C:\Users\Administrator\Desktop\Cone\new\C++one\x64\Debug\C++one.exe
