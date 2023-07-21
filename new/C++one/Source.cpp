@@ -1,85 +1,92 @@
 #include<stdio.h>
+#pragma region 매크로
+// 프로그램 내에서 특정한 데이터가 
+// 문자열로 정의되고 처리되는 과정.
+
+#define SIZE 5
+// 전처리기란?
+// 프로그램이 컴파일되기 이전에 프로그램에 대한
+// 사전 처리하는 과정이다.
+#pragma endregion
 
 void main()
 {
-#pragma region 주소 연산자
-	// 변수의 주소 값을 반환하는 연산자이다.
 
-	// int data = 100;
-
-	// 메모리 주소는 프로그램이 실행될 때마다
-	// 계속 변경된다.
-
-	// printf("data의 주소 : %p\n", &data);
-
-	// 데이터의 주소 값은 해당 데이터가 저장된
-	// 메모리의 시작 주소를 의미하며, 
-	// 메모리의 공간은 1byte 크기로 나누어 표현한다.
-
-#pragma endregion
-
-#pragma region scanf( ) 함수
-	// 표준 입력 함수로, 여러 종류의 데이터를
-	// 다양한 서식에 맞추어 입력해주는 함수이다.
+#pragma region 포인터 상수화
+	
 	/*
+	// float data = 99.865f;
+	// int* pointer = NULL;
 
-	int input = 0;
+	// 포인터 변수의 크기는 중앙 처리 장치가 
+	// 한 번에 처리할 수 있는 크기로 정해지며,
+	// 한 번에 처리할 수 있는 크기는 운영체제에 따라 크기가 결정된다.
 
-	// 입력할 데이터의 서식 지정자, 내가 입력할 변수의 주소 남기기
-
-	// scnaf_s를 사용하는걸 권장한다.
-
-	// 표준 입력 함수로 데이터를 입력하게 되면 
-	// 버퍼에 데이터를 보관하였다가 입력하는 순간
-	// 버퍼 안의 내용을 프로그램에 전송한다.
+	// printf("pointer 변수의 크기 :%d\n", sizeof pointer);
 
 	
 
-	// scanf_s("%d", &input);
+	// 포인터 변수를 저장하기 위해 주소 값을 저장할
+	// 변수의 자료형과 포인터 변수의 자료형이 일치해야 한다.
+	// pointer = &data; error
+	*/
+	// 상수 지시 포인터 
+    /*
+	int hp = 100;
+	int mp = 50;
+	const int *cPtr = &hp;
 
-	// printf("input 변수의 값 : %d\n", input);
+	printf("cPtr이 가리키는 값 : %d\n", *cPtr);
 
-	while (1)
-	{
-		// 표준 입력 함수는 입력을 수행할 때까지
-		// 다음 작업으로 넘어갈 수 없다.
-		scanf_s("%d", &input);
+	// 포인터 변수를 상수로 선언하여, 포인터가 변수를 
+	// 가리키고 있는 주소에 존재하는 값을 변경할 수 없다.
+	// *cPtr = 999; error
 
-		printf("입력하였습니다..\n");
-	}
+	cPtr = &mp;
 
-	// 버퍼는 데이터가 이동할 때 임시로 저장되는 공간이다.
+	// 포인터로 참조되어 있는 변수는 상수화에 대한 
+	// 영향을 받지 않은다.
+	mp = 999;
+	printf("cPtr이 가리키는 값 : %d\n", *cPtr);
 	*/
 
-
-#pragma endregion
-
-#pragma region 포인터
+	// 상수 포인터
 	/*
-	// 메모리의 주소 값을 저장할 수 있는 변수.
+	float decimal1 = 5.75f;
+	float decimal2 = 9.99f;
 
-	int value = 100;
+	float* const floatPtr = &decimal1;
 
-	// 포인터 변수도 자신의 메모리 공간을 가지고 있으며
-	// 포인터 변수에 변수의 주소를 저장하게 되면
-	// 해당 변수의 시작 주소를 가리키게 된다.
+	// 포인터 상수는 포인터 변수가 상수화되어 
+	// 새로운 주솟값을 저장할 수 없다.
+	// floatPtr =&deciaml2; error
 
-	int* ptr = &value;
+	*floatPtr = 16.825f;
 
-	printf("ptr의 값 :%p\n", ptr);
-	printf("value의 주소 값 :%p\n", &value);
-	printf("ptr 변수의 고유 주소 :%p\n", &ptr);
-
-	*ptr = 9999;
-
-	// 포인터가 가리키는 메모리 공간의 자료형은
-	// 알 수 없으므로 포인터가 가리키는 메모리의
-	// 자료형을 선언해주어야 한다.
-
-	printf("ptr 변수가 가리키는 값 :%d\n", *ptr);
-	printf("value 변수의 값 :%d\n", value);
+	printf("flaotPtr이 가리키는 값 : %f", *floatPtr);
 	*/
 #pragma endregion
+
+
+#pragma region 매크로
+
+	// 매크로의 경우 자료형이 존재하지 않으므로
+	// 메모리 공간을 가지고 있지 않는다.
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		printf("채집 중...\n");
+	}
+	for (int i = 0; i < SIZE; i++)
+	{
+		printf("사냥 중...\n");
+	}
+	for (int i = 0; i < SIZE; i++)
+	{
+		printf("낚시 중...\n");
+	}
+#pragma endregion
+
 
 
 }
