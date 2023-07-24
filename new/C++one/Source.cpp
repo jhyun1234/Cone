@@ -1,90 +1,72 @@
 #include<stdio.h>
-#pragma region 매크로
-// 프로그램 내에서 특정한 데이터가 
-// 문자열로 정의되고 처리되는 과정.
 
-#define SIZE 5
-// 전처리기란?
-// 프로그램이 컴파일되기 이전에 프로그램에 대한
-// 사전 처리하는 과정이다.
-#pragma endregion
 
 void main()
 {
+#pragma region 배열 
+	// 같은 자료형의 변수들로 이루어진 유한 집합이다.
 
-#pragma region 포인터 상수화
-	
-	/*
-	// float data = 99.865f;
-	// int* pointer = NULL;
+	int buffer[5] = { 0, };
+	// 초기화를 하고싶을때  { 0, }; 입력
 
-	// 포인터 변수의 크기는 중앙 처리 장치가 
-	// 한 번에 처리할 수 있는 크기로 정해지며,
-	// 한 번에 처리할 수 있는 크기는 운영체제에 따라 크기가 결정된다.
 
-	// printf("pointer 변수의 크기 :%d\n", sizeof pointer);
+	buffer[0] = 100;
 
-	
+	// 배열은 원하는 원소에 원하는 값을 저장할 수 있으며,
+	// 배열의 크기는 컴파일이 되는 시점부터 고정된 메모리 공간을 가지게 된다.
 
-	// 포인터 변수를 저장하기 위해 주소 값을 저장할
-	// 변수의 자료형과 포인터 변수의 자료형이 일치해야 한다.
-	// pointer = &data; error
-	*/
-	// 상수 지시 포인터 
-    /*
-	int hp = 100;
-	int mp = 50;
-	const int *cPtr = &hp;
+	// [ ]  [ ]  [ ]  [ ]  [ ]
 
-	printf("cPtr이 가리키는 값 : %d\n", *cPtr);
+	// // 배열의 경우 첫 번째 원소는 0부터 시작한다.
+	// printf("buffer의 0번 째 index는 : %d\n", buffer[0]);
+	// 
+	// // 배열의 크기는 생략할 수 있으며 ,초기화 목록에서 설정한
+	// // 요소에 따라 배열의 크기가 결정된다.
+	 float dataList[] = { 1.11f,2.22f,3.33f };
+	// 
+	// // 배열은 연속적인 메모리 공간을 가지며, 
+	// // 배열의 이름은 배열의 시작 주소를 가리킨다.
+	// printf("dataList의 주소 %p\n", dataList);
+	// printf("dataList[0]의 주소 %p\n", &dataList[0]);
 
-	// 포인터 변수를 상수로 선언하여, 포인터가 변수를 
-	// 가리키고 있는 주소에 존재하는 값을 변경할 수 없다.
-	// *cPtr = 999; error
+	 // float* floatPtr = dataList;
+	 // 
+	 // printf("floatPtr의 주소 : %p\n", floatPtr);
+	 // printf("floatPtr이 가리키는 값 : %f\n", *(floatPtr));
+	 // 
+	 // floatPtr = floatPtr + 2;
+	 // 
+	 // printf("floatPtr이 가리키는 주소 %p\n", floatPtr);
+	 // printf("floatPtr이 가리키는 값 : %f\n", *(floatPtr));
 
-	cPtr = &mp;
-
-	// 포인터로 참조되어 있는 변수는 상수화에 대한 
-	// 영향을 받지 않은다.
-	mp = 999;
-	printf("cPtr이 가리키는 값 : %d\n", *cPtr);
-	*/
-
-	// 상수 포인터
-	/*
-	float decimal1 = 5.75f;
-	float decimal2 = 9.99f;
-
-	float* const floatPtr = &decimal1;
-
-	// 포인터 상수는 포인터 변수가 상수화되어 
-	// 새로운 주솟값을 저장할 수 없다.
-	// floatPtr =&deciaml2; error
-
-	*floatPtr = 16.825f;
-
-	printf("flaotPtr이 가리키는 값 : %f", *floatPtr);
-	*/
+	 // 배열의 크기를 벗어나서 데이터를 저장할 수 없다.
+	 // ex) dataList[4] = 36.1f error
 #pragma endregion
 
+#pragma region 문자열
+	 // 연속적인 메모리 공간에 저장된 
+	 // 문자 변수의 집합이다.
 
-#pragma region 매크로
+	 // 문자열의 경우 포인터를 이용하여 문자열 상수를 가리키도록 할 수 있으며,
+	 // 문자열 상수는 데이터 영역의 읽기 전용 공간에 저장되기 때문에 문자열의
+	 // 값을 변경 할 수 없다.
 
-	// 매크로의 경우 자료형이 존재하지 않으므로
-	// 메모리 공간을 가지고 있지 않는다.
+	 const char* character = "Level";
 
-	for (int i = 0; i < SIZE; i++)
-	{
-		printf("채집 중...\n");
-	}
-	for (int i = 0; i < SIZE; i++)
-	{
-		printf("사냥 중...\n");
-	}
-	for (int i = 0; i < SIZE; i++)
-	{
-		printf("낚시 중...\n");
-	}
+	 character = "Cla\0ss";
+
+	 // 문자열은 공백도 함께 메모리 공간에 포함하여 
+	 // 크기가 결정되며 , 마지막에 문자열의 끝을 알려주는 제어 문자가 추가된다.
+	 // 문자열의 경우 문자 배열 사이에 무효의 문자를 넣게 되면
+	 // 무효의 문자까지만 문자열을 출력한다.
+
+
+	 // "%c" 문자하나만 출력
+	 // "%s" 문자열을 출력
+
+	 printf("character 의 값 : %s\n", character);
+	 printf("character 의 값 : %c\n", *(character+1));
+
 #pragma endregion
 
 
