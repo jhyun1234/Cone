@@ -1,141 +1,78 @@
 #include<stdio.h>
 
-// 자료형, 함수의 이름, (매개 변수)
-void Function()
-{
-	// 같은 이름의 함수를 선언 할 수 없다.
+#pragma region 재귀 함수
+    // 어떤 함수에서 자신을 다시 호출하여
+    // 작업을 수행하는 함수이다.
 
-	for (int i = 0; i < 5; ++i)
+void Funtion()
+{
+	// 재귀 함수는 함수를 계속 호출하기 때문에 
+	// 스택 영역에 메모리가 계속 쌓이게 되므로 
+	// 스택 오버플로우가 발생한다.
+	printf("함수 호출\n");
+	Funtion();
+   }
+#pragma endregion
+
+void CountDown(int count)
+{
+	// 방어 코드
+	if (count <= 0)
 	{
+		return;
+	}
+
+	printf("count의 값은 %d\n", count);
+	CountDown(count - 1);
+	printf("ㅎㅇ\n");
+}
+
+// 팩토리얼
+
+// 5!(120)  4!(24)  3!(6)
+// 3! = 3 * 2 * 1
+// 4! = 4 * 3 * 2 * 1
+// 5! = 5 * 4 * 3 * 2 * 1
+
+int Fac(int count)
+{
+	if (count <= 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return count * Fac(count - 1);
 
 	}
-	printf("Funtion\n");
-}
-// 반환형
-// 함수의 경우 자료형과 반환하는 값의 형태가 일치하지 않으면
-// 원하는 값을 얻을 수 가 없다.
-char CharFuntion()
-{
-
-
-	return'A';
-
-}
-
-#pragma region 매개 변수
-// 함수의 정의에서 전달받은 인수를 함수 내부로
-// 전달하기 위해 사용하는 변수이다.
-
-void Calculator(int x)
-{
-
-	x = 450;
-
-	printf("x의 값 : %d\n", x);
-}
-// 참조에 의한 호출
-void Swap(int *x, int *y)
-{
-	int temp = *y;
-	*y = *x;
-	*x = temp;
-
+	
+	
 }
 
 
-// 매개 변수는 함수 내부에서만 연산이 이루어지며,
-// 함수가 종료되면 메모리에서 사라지며, 
-// 여러 개의 매개 변수를 생성할 수 있다.
-
-
-#pragma endregion
-
-
-void main()
+int main()
 {
-#pragma region 범용(void) 포인터
-	/*// 자료형이 정해지지 않은 상태로
-	// 모든 자료형을 저장할 수 있는 포인터이다.
+
+	// CountDown(5);
+
+	int data = 16;
+
+	int* ptr = &data;
+	
+	// printf("%d\n", Fac(5));
+
+	// 빅 엔디안 방식
+	// 네트워크 <- 통일
 
 
-	// int(4byte)
-	int data = 100;
-
-	// float(4byte)
-	float pi = 3.141592f;
-
-
-	void* ptr = &data;
-
-	// *ptr = 10; error
-	// 범용 포인터는 메모리 주소에 접근해서 
-	// 값을 변경할 수 없다.
-
-	*(int*)ptr = 111111;
+	// 리틀 엔디안 방식 
+	// 낮은 주소에 데이터의 낮은 바이트(LSB,Least,Significant Bit)
+	// 부터 저장하는 방법
+	// 비교 2byte만 하면 충분
 	
 
-	printf("ptr이 가리키는 값 : %d\n", *(int*)ptr);
-	printf("data 의 값 : %d\n", data);
-
-	ptr = & pi;
-
-	printf("ptr이 가리키는 값 : %f\n", *(float*)ptr);
-	printf("pi의 값 : %f\n", pi);
-
-	*/
-
-
-
-#pragma endregion
-
-
-#pragma region 함수
-	// 하나의 특별한 목적의 작업을 수행하기 위해
-	// 독립적으로 설계된 코드의 집합이다.
-
-	// 함수의 호출 
-	for (int i = 0; i < 5; ++i)
-	{
-		Function();
-	}
-	
-	printf("%c\n", CharFuntion());
-	CharFuntion();
-
-#pragma endregion
-
-#pragma region 인수
-	// 함수가 호출될 때 매개 변수에 
-	// 실제로 전달되는 값이다.
-
-	// int value = 100;
-	// 
-	// Calculator(value);
-	// 
-	// printf("vlaue의 값 :%d\n", value);
-
-	// 값 바꾸기 
-	int a = 10;
-	int b = 20;
-
-
-	Swap(&a, &b);
-	
-	printf("a 의 값 : %d, b의 값 : %d  ", a, b);
-
-
-
-	
-
-
-
-	
-
-	
-
-
-#pragma endregion
-
-
+	// 프로그램이 정상적으로 종료되었을 때,
+	// 0 이라는 값을 반환한다.
+	return 0;
 
 }
