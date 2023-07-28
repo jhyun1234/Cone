@@ -53,5 +53,17 @@
     <ClInclude Include="%282023.7.26%29 재귀함수.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="2023.7.27인라인 함수.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRandom\soundManger.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRandom\ControlSound.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="2023.7.28변수의 범위.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
