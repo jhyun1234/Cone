@@ -145,6 +145,7 @@
     <ClInclude Include="2023.7.28변수의 범위.h" />
     <ClInclude Include="2023.7.31.동적할당.h" />
     <ClInclude Include="2023.8.01 구조체.h" />
+    <ClInclude Include="2023.8.02자기참조구조체.h" />
     <ClInclude Include="GameRandom\ControlSound.h" />
     <ClInclude Include="GameRandom\soundManger.h" />
   </ItemGroup>
