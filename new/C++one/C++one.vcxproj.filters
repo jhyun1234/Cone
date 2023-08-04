@@ -74,5 +74,8 @@
     <ClInclude Include="2023.8.02자기참조구조체.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="2023.8.03ASCII코드.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,3 +1,2 @@
 ﻿  Source.cpp
-C:\Users\Administrator\Desktop\Cone\new\C++one\Source.cpp(24,16): warning C4101: 'state' :참조되지 않은 지역 변수입니다.
-  C++one.vcxproj -> C:\Users\Administrator\Desktop\Cone\new\C++one\x64\Debug\C++one.exe
+  C++one.vcxproj -> C:\Users\User A\Documents\GitHub\Cone\new\C++one\x64\Debug\C++one.exe
